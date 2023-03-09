@@ -1,0 +1,85 @@
+<html>
+
+<head>
+<title><%= title %></title>    
+
+<style>
+    
+    body{
+        background-color: red;
+        text-align: center;
+        background-image: url("img/mouse.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    
+    h1{
+        color: chartreuse;
+        font-size: 35px;
+    }
+    
+  table, th {
+     margin-top: 60px;
+     margin-left: 360px;
+     border: 1px solid black;
+     border-collapse: collapse;
+     text-align: center;
+     font-size: 30px;
+     color: white;      
+   }
+    
+    th{
+      color: red;
+      padding: 15px;
+    }
+    
+    td{
+      border: 1px solid black;
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 20px;
+      color: red;
+      padding: 15px;
+      vertical-align: center;
+    }
+    
+    tr:hover {
+        background-color:green;
+        }
+    
+     a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    a:hover {
+       color: hotpink;
+      }
+   
+</style>    
+
+</head>
+
+<body>
+
+<h1>USERS</h1>    
+    
+<table style="width:50%;height:60px">
+
+<!--Setting up the heading of the table for all the users retrieved from the database--->
+  <tr>
+    <th><strong>Name</strong></th>       
+</tr>
+<!--Circulating through all the values obtained and giving the of the individual people when clicked on them--->
+
+<% for(var i=0; i< res.length; i++){ %>
+      
+    <tr>
+        <td><a href="http://localhost:3000/info/<%= res[i]._id %>"><%= res[i].name %></a></td>
+    </tr>
+<% } %>
+    
+</table>
+    
+</body>
+</html>

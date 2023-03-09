@@ -1,0 +1,51 @@
+<html>
+
+<head>
+<title>Server Page</title>    
+
+<style>
+    
+    body{
+        background-color: blue;
+        text-align: center;
+        font-display: block;
+    }
+    
+    h1{
+        color: chartreuse;
+        font-size: 35px;
+    }
+    
+    p,h2{
+        color: brown;
+        font-size: 30px;
+    }
+    li {
+        color: red;
+        font-size: 30px;
+    }
+    ul {
+        text-align: center;
+    }
+</style>    
+
+</head>
+
+<body>
+
+
+<h1>This is the profile of <%= person %></h1>
+<p><strong>Age: </strong><%= data.age %></p>
+<p><strong>Job: </strong><%= data.job %></p>
+<h2>Hobbies</h2>
+
+<ul>
+   <% data.hobbies.forEach((item) => { %>        
+
+<li><%= item %></li>        
+<% }); %>     
+</ul>
+
+</body>
+
+</html>
